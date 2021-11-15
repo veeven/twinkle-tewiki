@@ -3,22 +3,7 @@ import messages from './messages.json';
 import mwMessageList from './mw-messages';
 
 // import modules
-import { Xfd } from './xfd';
-import { Tag } from './tag';
-import { Speedy } from './speedy';
-import { Warn } from './warn';
 import { Fluff } from './fluff';
-import { BatchDelete } from './batchdelete';
-import { Protect } from './protect';
-import { Block } from './block';
-import { Prod } from './prod';
-import { Deprod } from './deprod';
-import { Welcome } from './welcome';
-import { Shared } from './shared';
-import { Talkback } from './talkback';
-import { Arv } from './arv';
-import { Unlink } from './unlink';
-import { BatchUndelete } from './batchundelete';
 
 // no customisation; import directly from core
 import { DiffCore as Diff } from './core';
@@ -31,33 +16,32 @@ if (!Morebits.userIsInGroup('autoconfirmed') && !Morebits.userIsInGroup('confirm
 	throw new Error('Twinkle: forbidden!');
 }
 
-Twinkle.userAgent = 'Twinkle ([[w:en:WP:TW]])';
-Twinkle.changeTags = 'twinkle';
-Twinkle.summaryAd = ' ([[WP:TW|TW]])';
+Twinkle.userAgent = `Twinkle (${mw.config.get('wgWikiID')})`;
+
+Twinkle.summaryAd = ' ([[Project:TW|TW]])';
+
+Twinkle.changeTags = '';
 
 Twinkle.messageOverrides = messages;
+
 Twinkle.extraMwMessages = mwMessageList;
 
-Twinkle.registeredModules = [
-	Xfd,
-	Tag,
-	Speedy,
-	Diff,
-	Warn,
-	Fluff,
-	BatchDelete,
-	Protect,
-	Block,
-	Prod,
-	Deprod,
-	Arv,
-	Welcome,
-	Shared,
-	Talkback,
-	Unlink,
-	BatchUndelete,
-];
+// List of module classes enabled
+Twinkle.registeredModules = [Fluff, Diff];
 
-SiteConfig.permalinkSpecialPageName = 'Special:Permalink';
+/**
+ * Adjust the following configurations if necessary
+ * Check the documentation for each property here:
+ * https://twinkle.toolforge.org/core-docs/modules/siteconfig.html
+ */
 
+SiteConfig.permalinkSpecialPageName = 'Special:PermanentLink';
+
+SiteConfig.botUsernameRegex = /bot\b/i;
+
+SiteConfig.flaggedRevsNamespaces = [];
+
+SiteConfig.redirectTagAliases = ['#REDIRECT'];
+
+// Go!
 init();
