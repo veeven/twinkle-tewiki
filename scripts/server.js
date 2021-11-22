@@ -4,9 +4,9 @@ const webpackConfig = require('../webpack.config');
 
 const compiler = Webpack(webpackConfig);
 const devServerOptions = Object.assign({}, webpackConfig.devServer);
-const server = new WebpackDevServer(compiler, devServerOptions);
+const server = new WebpackDevServer(devServerOptions, compiler);
 
-server.listen(5500, '127.0.0.1', () => {
+server.start(5500, '127.0.0.1', () => {
 	console.log('Starting server on http://localhost:5500');
 });
 
