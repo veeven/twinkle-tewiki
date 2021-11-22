@@ -4,6 +4,7 @@ import mwMessageList from './mw-messages';
 
 // import modules
 import { Fluff } from './fluff';
+import { Xfd } from './xfd';
 
 // no customisation; import directly from core
 import { DiffCore as Diff } from './core';
@@ -27,7 +28,7 @@ Twinkle.messageOverrides = messages;
 Twinkle.extraMwMessages = mwMessageList;
 
 // List of module classes enabled
-Twinkle.registeredModules = [Fluff, Diff];
+Twinkle.registeredModules = [Fluff, Diff, Xfd];
 
 /**
  * Adjust the following configurations if necessary
