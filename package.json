@@ -1,7 +1,7 @@
 {
-	"name": "#{REPO_NAME}#",
+	"name": "twinkle-tewiki",
 	"version": "1.0.0",
-	"description": "#{DESC}#",
+	"description": "ట్వింకిల్ తెలుగు స్థానికీరణ, అభిమతీకరణ",
 	"scripts": {
 		"format": "prettier --write .",
 		"lint": "eslint . --ext .js --ext .ts",
@@ -18,11 +18,11 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/#{USER_OR_ORG}#/#{REPO_NAME}#.git"
+		"url": "git://github.com/veeven/twinkle-tewiki.git"
 	},
-	"author": "#{USER_OR_ORG}#",
+	"author": "veeven",
 	"license": "CC-BY-SA-3.0",
-	"homepage": "https://github.com/#{USER_OR_ORG}#/#{REPO_NAME}#",
+	"homepage": "https://github.com/veeven/twinkle-tewiki",
 	"sideEffects": [
 		"src/globals.ts"
 	],
